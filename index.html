@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JKLEGAL ASSOCIATE | Indian Law Firm</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <style>
+        /* --- CSS Reset & Variables --- */
+        * {
+            margin: 0;
+            margin-top: 10px;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #0c1a30;
+            /* Deep Corporate Navy */
+            --secondary: #b19453;
+            /* Elegant Gold/Brass Accent */
+            --text-dark: #222222;
+            --text-light: #f5f6f8;
+            --bg-light: #fafafa;
+            --font-serif: 'Cinzel', serif;
+            --font-sans: 'Inter', sans-serif;
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            color: var(--text-dark);
+            line-height: 1.6;
+            background-color: #ffffff;
+        }
+
+        /* --- Global Components --- */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            font-family: var(--font-serif);
+            font-size: 2.5rem;
+            color: var(--primary);
+            text-align: center;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 50px;
+            font-size: 1.1rem;
+        }
+
+        /* --- Header & Navigation --- */
+        header {
+            background-color: #ffffff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo {
+            font-family: var(--font-serif);
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: var(--secondary);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary);
+        }
+
+        .nav-btn {
+            background-color: var(--primary);
+            color: white !important;
+            padding: 10px 20px;
+            border-radius: 4px;
+            transition: var(--transition);
+        }
+
+        .nav-btn:hover {
+            background-color: var(--secondary);
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            background: linear-gradient(rgba(12, 26, 48, 0.85), rgba(12, 26, 48, 0.85)),
+                url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=1920') no-repeat center center/cover;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            color: var(--text-light);
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-family: var(--font-serif);
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 35px;
+            font-weight: 300;
+            opacity: 0.9;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: var(--primary);
+            text-decoration: none;
+            padding: 15px 35px;
+            font-weight: 600;
+            border-radius: 4px;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            transition: var(--transition);
+        }
+
+        .cta-btn:hover {
+            background-color: #ffffff;
+            color: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        /* --- About Section --- */
+        .about {
+            padding: 100px 0;
+            background-color: #ffffff;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-family: var(--font-serif);
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            background-color: var(--bg-light);
+            padding: 40px;
+            border-left: 5px solid var(--secondary);
+        }
+
+        .stat-item h4 {
+            font-family: var(--font-serif);
+            font-size: 2.5rem;
+            color: var(--secondary);
+        }
+
+        .stat-item p {
+            font-weight: 600;
+            color: var(--primary);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+        }
+
+        /* --- Practice Areas --- */
+        .practice-areas {
+            padding: 100px 0;
+            background-color: var(--bg-light);
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background-color: #ffffff;
+            padding: 40px 30px;
+            border-radius: 4px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.02);
+            transition: var(--transition);
+            border-top: 3px solid transparent;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-top: 3px solid var(--secondary);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .card-icon {
+            font-size: 2rem;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            font-family: var(--font-serif);
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        .card p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        /* --- Contact Section --- */
+        .contact {
+            padding: 100px 0;
+            background-color: #ffffff;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 50px;
+        }
+
+        .contact-info {
+            background-color: var(--primary);
+            color: white;
+            padding: 50px;
+            border-radius: 4px;
+        }
+
+        .contact-info h3 {
+            font-family: var(--font-serif);
+            font-size: 1.8rem;
+            color: var(--secondary);
+            margin-bottom: 30px;
+        }
+
+        .info-link {
+            margin-bottom: 25px;
+        }
+
+        .info-link p {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            color: var(--secondary);
+            margin-bottom: 5px;
+        }
+
+        .info-link a,
+        .info-link span {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 1.05rem;
+        }
+
+        .contact-form {
+            background-color: var(--bg-light);
+            padding: 50px;
+            border-radius: 4px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: var(--font-sans);
+            font-size: 1rem;
+            outline: none;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--primary);
+        }
+
+        .submit-btn {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 14px 30px;
+            font-size: 1.05rem;
+            font-weight: 500;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: var(--transition);
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            background-color: var(--secondary);
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: #060d1a;
+            color: #8a99ad;
+            padding: 30px 0;
+            text-align: center;
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.3rem;
+            }
+
+            .about-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">JKLEGAL & <span>ASSOCIATE</span></a>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#about">About Firm</a></li>
+                <li><a href="#practice">Practice Areas</a></li>
+                <li><a href="#contact" class="nav-btn">Schedule Consultation</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>Defending Your Rights, Protecting Your Enterprise</h1>
+            <p>Trusted legal counsel and dedicated representation for individuals, businesses, and institutions across
+                India.</p>
+            <a href="#contact" class="cta-btn">Book an Appointment</a>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-text">
+                    <h3>Legacy of Trust & Legal Excellence</h3>
+                    <p>JK Legal is a professionally driven law firm offering comprehensive legal services in litigation,
+                        cheque bounce matters, co-operative disputes, property matters, corporate advisory, and
+                        compliance management. We combine legal expertise with practical insight to deliver strategic,
+                        efficient, and result-oriented solutions.</p>
+                    <p>Committed to integrity, professionalism, and client success, we help individuals and businesses
+                        navigate complex legal challenges with confidence. Our focus on precision, transparency, and
+                        timely execution enables us to build lasting relationships founded on trust and excellence.</p>
+                </div>
+                <div class="about-grid-right">
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <h4>15+</h4>
+                            <p>Years of Experience</p>
+                        </div>
+                        <div class="stat-item">
+                            <h4>94%</h4>
+                            <p>Success Rate</p>
+                        </div>
+                        <div class="stat-item">
+                            <h4>250+</h4>
+                            <p>Litigations Won</p>
+                        </div>
+                        <div class="stat-item">
+                            <h4>10+</h4>
+                            <p>Legal Experts</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="practice-areas" id="practice">
+        <div class="container">
+            <h2 class="section-title">Core Practice Areas</h2>
+            <p class="section-subtitle">Tailored legal solutions executing clarity and strength across distinct sectors.
+            </p>
+
+            <div class="grid-3">
+                <div class="card">
+                    <div class="card-icon">🏛️</div>
+                    <h3>Corporate & Commercial</h3>
+                    <p>M&A advisory, regulatory compliance, joint ventures, and drafting watertight commercial contracts
+                        under Indian law.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">⚖️</div>
+                    <h3>Dispute Resolution</h3>
+                    <p>Fierce representation in civil litigation, white-collar defense, and domestic/international
+                        commercial arbitration.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🏢</div>
+                    <h3>Insolvency & Bankruptcy</h3>
+                    <p>Comprehensive strategy and litigation support before NCLT and NCLAT under the IBC framework.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">💻</div>
+                    <h3>Intellectual Property</h3>
+                    <p>Filing, enforcement, and litigation concerning patents, trademarks, and copyright designs in
+                        digital markets.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🏡</div>
+                    <h3>Real Estate & RERA</h3>
+                    <p>Due diligence on properties, structural joint developments, and compliance under regional RERA
+                        guidelines.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">💼</div>
+                    <h3>Employment & Labor</h3>
+                    <p>Advising corporate boards on modern labor codes, compliance structural layouts, and resolving
+                        employee unions matters.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Request a Consultation</h2>
+            <p class="section-subtitle">Connect with our senior partners to evaluate your legal matter confidentially.
+            </p>
+
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Our OFFICE</h3>
+                    <div class="info-link">
+                        <p>Pune Office (HQ)</p>
+                        <span>My Office Conclave Office No.406, 4th Floor, Behind Pride Hotel, Shivaji Nagar Pune
+                            411005</span>
+                    </div>
+                    <div class="info-link">
+                        <p>Pune Office</p>
+                        <span>Shivaji Nagar Pune 411005</span>
+                    </div>
+                    <div class="info-link">
+                        <p>Email Inquiry</p>
+                        <a href="mailto:legalofficejk@gmail.com">legalofficejk@gmail.com</a>
+                    </div>
+                    <div class="info-link">
+                        <p>Direct Phone</p>
+                        <a href="tel:+917875443846">+91 78754 43846</a>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <form id="consultationForm">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" required placeholder="e.g., Rajesh Kumar">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" required placeholder="e.g., +91 98765 43210">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" required placeholder="e.g., rajesh@company.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="practice-select">Legal Department Required</label>
+                            <select id="practice-select" required>
+                                <option value="Corporate & Commercial">Corporate & Commercial</option>
+                                <option value="Dispute Resolution & Litigation">Dispute Resolution & Litigation</option>
+                                <option value="Insolvency & Bankruptcy (NCLT)">Insolvency & Bankruptcy (NCLT)</option>
+                                <option value="Intellectual Property Rights">Intellectual Property Rights</option>
+                                <option value="Civil/Criminal Matter">Civil/Criminal Matter</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="overview">Brief Overview of Legal Matter</label>
+                            <textarea id="overview" rows="3" required
+                                placeholder="Describe your legal requirements..."></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Submit Case Briefing</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 JKLEGAL & ASSOCIATE. All Rights Reserved.</p>
+    </footer>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+        import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+
+        // Firebase Web Config matching your active admin setup
+        const firebaseConfig = {
+            apiKey: "AIzaSyCdepaqV8lB803Uf7MWlu96W-Bq10B5u3o",
+            authDomain: "jklegal-asscociate.firebaseapp.com",
+            projectId: "jklegal-asscociate",
+            storageBucket: "jklegal-asscociate.firebasestorage.app",
+            messagingSenderId: "381680517461",
+            appId: "1:381680517461:web:f1ad34c7a323270e356fdc"
+        };
+
+        // Initialize Core Engines
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        const consultationForm = document.getElementById('consultationForm');
+
+        consultationForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            // Collect exact input strings from the DOM nodes
+            const clientName = document.getElementById('name').value;
+            const clientPhone = document.getElementById('phone').value;
+            const clientEmail = document.getElementById('email').value;
+            const requestedDepartment = document.getElementById('practice-select').value;
+            const caseOverview = document.getElementById('overview').value;
+
+            try {
+                // Safely push document mapping to the "consultations" collection path
+                await addDoc(collection(db, "consultations"), {
+                    clientName: clientName,
+                    clientPhone: clientPhone,  // <-- Saving as "clientPhone"
+                    clientEmail: clientEmail,
+                    requestedDepartment: requestedDepartment,
+                    caseOverview: caseOverview,
+                    submittedAt: serverTimestamp()
+                });
+
+                alert("Thank you. Your consultation briefing has been securely transmitted. A legal associate will contact you within 2 business hours.");
+                consultationForm.reset();
+            } catch (error) {
+                console.error("Transmission Error to Firestore Pipeline:", error);
+                alert("Submission failed due to a connectivity issue. Please try again or contact us directly.");
+            }
+        });
+    </script>
+</body>
+
+</html>
